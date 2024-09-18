@@ -20,7 +20,7 @@ const SignUp = () => {
                     // user database send
                     const createdAt = result.user?.metadata?.creationTime
                     const user = { email, password, createdAt: createdAt };
-                    fetch('https://react-coffee-store-server.vercel.app/user', {
+                    fetch('http://localhost:5000/user', {
                          method: 'POST',
                          headers: {
                               'content-type': 'application/json'
