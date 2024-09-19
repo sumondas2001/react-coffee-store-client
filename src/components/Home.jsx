@@ -9,7 +9,7 @@ import { useState } from "react";
 const Home = () => {
      const allCoffee = useLoaderData();
      const [coffees, setCoffees] = useState(allCoffee)
-     console.log(allCoffee)
+     // console.log(allCoffee)
      return (
           <div>
                <Header></Header>
@@ -23,15 +23,14 @@ const Home = () => {
                     </div>
                     <div className="grid grid-cols-2 gap-10 mx-20">
                          {
-                              coffees.map(coffee =>
-                                   <CoffeeCard
-                                        key={coffee._id}
-                                        coffee={coffee}
-                                        coffees={coffees}
-                                        setCoffees={setCoffees}
-                                   >
+                              coffees.map(coffee => <CoffeeCard
+                                   key={coffee._id}
+                                   coffee={coffee}
+                                   coffees={coffees}
+                                   setCoffees={setCoffees}
+                              >
 
-                                   </CoffeeCard>)
+                              </CoffeeCard>)
                          }
                     </div>
                </div>

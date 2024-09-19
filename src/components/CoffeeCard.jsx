@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
      const { _id, name, chef, photo, price } = coffee;
+     // console.log(typeof coffees)
      const handelDelete = (_id) => {
           console.log('delete', _id);
           Swal.fire({
@@ -39,7 +40,8 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
                }
           });
 
-     }
+     };
+
      return (
 
           <div className="  bg-[#202020] shadow-xl rounded-xl mt-10">
@@ -59,7 +61,10 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
 
                     </div>
                     <div className="flex flex-col gap-4">
-                         <button className="text-3xl bg-amber-400 p-2 rounded-2xl text-black"><FaEye /></button>
+                         <Link
+                              to={`/coffeeDetails/${_id}`}>
+                              <button className="text-3xl bg-amber-400 p-2 rounded-2xl text-black"><FaEye /></button>
+                         </Link>
                          <Link to={`/updateCoffee/${_id}`}>
                               <button className="text-3xl bg-blue-400 p-2 rounded-2xl text-black"><MdEdit /></button>
                          </Link>
